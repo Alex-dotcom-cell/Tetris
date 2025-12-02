@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 5px;
+}
+
+.game-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.info-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 200px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.info-section div {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.next-piece {
+    width: 80px;
+    height: 80px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 2px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.next-piece-cell {
+    border-radius: 2px;
+}
+
+.controls-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.controls-info h3 {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.controls-info p {
+    font-size: 0.9em;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    font-size: 1em;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.game-board-wrapper {
+    position: relative;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    gap: 2px;
+    width: 300px;
+    height: 600px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cell {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    transition: background-color 0.1s;
+}
+
+.cell.filled {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cell.i {
+    background: #00f0f0;
+}
+
+.cell.o {
+    background: #f0f000;
+}
+
+.cell.t {
+    background: #a000f0;
+}
+
+.cell.s {
+    background: #00f000;
+}
+
+.cell.z {
+    background: #f00000;
+}
+
+.cell.j {
+    background: #0000f0;
+}
+
+.cell.l {
+    background: #f0a000;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    z-index: 100;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.game-over.hidden {
+    display: none;
+}
+
+.game-over h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffd700;
+}
+
+.game-over p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#final-score {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+@media (max-width: 768px) {
+    .game-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info-panel {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+}
+
