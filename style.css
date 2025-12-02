@@ -216,19 +216,202 @@ h1 {
     font-size: 1.5em;
 }
 
+.mobile-controls {
+    display: none;
+    margin-top: 20px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.control-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.control-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 2em;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.control-btn:active {
+    transform: scale(0.9);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.rotate-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5em;
+    background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+}
+
+.down-btn {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5em;
+}
+
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    
+    .container {
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
     .game-wrapper {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     
     .info-panel {
         width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        order: 2;
+    }
+    
+    .game-board-wrapper {
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .game-board {
+        width: min(90vw, 300px);
+        height: min(60vh, 600px);
+        aspect-ratio: 1 / 2;
         max-width: 300px;
+        max-height: 600px;
     }
     
     h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+    }
+    
+    .info-section h2 {
+        font-size: 1em;
+    }
+    
+    .info-section div {
+        font-size: 1.5em;
+        padding: 8px;
+    }
+    
+    .next-piece {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .controls-info {
+        display: none;
+    }
+    
+    .mobile-controls {
+        display: block;
+        order: 3;
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto 0;
+    }
+    
+    .control-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8em;
+    }
+    
+    .rotate-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 2.2em;
+    }
+    
+    .down-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 2.2em;
+    }
+    
+    .btn {
+        padding: 15px;
+        font-size: 1.1em;
+        margin: 8px 0;
+    }
+    
+    .game-over {
+        padding: 20px;
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .game-over h2 {
+        font-size: 1.5em;
+    }
+    
+    .game-over p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .game-board {
+        width: min(85vw, 280px);
+        height: min(55vh, 560px);
+    }
+    
+    .control-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.6em;
+    }
+    
+    .rotate-btn {
+        width: 65px;
+        height: 65px;
         font-size: 2em;
+    }
+    
+    .down-btn {
+        width: 65px;
+        height: 65px;
+        font-size: 2em;
+    }
+    
+    .control-row {
+        gap: 10px;
     }
 }
 
